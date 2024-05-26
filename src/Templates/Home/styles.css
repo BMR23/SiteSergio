@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --container-all-width: 1200px;
+    /* --swiper-theme-color: #031a05 !important; */
+}
+
+.container-all {
+    width: var(--container-all-width);
+    margin: 0 auto;
+}
