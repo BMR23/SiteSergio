@@ -7,14 +7,16 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 
-export const ImageGallerySlider = ({ images }) => {
+export const ImageSlider = ({ images, autoplay=false,  }) => {
   return (
-    <Swiper
+    <>
+    {autoplay && (
+      <Swiper
       spaceBetween={30}
       centeredSlides={true}
       autoplay={{
         delay: 2500,
-        disableOnInteraction: true,
+        disableOnInteraction: false,
       }}
       pagination={{
         clickable: true,
@@ -30,9 +32,32 @@ export const ImageGallerySlider = ({ images }) => {
         </SwiperSlide>
       ))}
     </Swiper>
-    )
+    )}
+
+    {!autoplay && (
+      <Swiper
+      spaceBetween={30}
+      centeredSlides={true}
+      pagination={{
+        clickable: true,
+      }}
+      navigation={true}
+      modules={[Pagination, Navigation]}
+      className="mySwiper"
+      >
+
+      {images.map((img, index) => (
+        <SwiperSlide key={index}>
+          <img src={img} alt="imagem" className='imgSwiper'/>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+    )}
+    </>
+  )
 };
 
-ImageGallerySlider.propTypes = {
-    images: P.array
+ImageSlider.propTypes = {
+    images: P.array.isRequired,
+    autoplay: P.bool
 }

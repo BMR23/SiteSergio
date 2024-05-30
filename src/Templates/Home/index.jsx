@@ -1,25 +1,50 @@
-import { Menu } from '@components/Menu';
-import { ImageGallerySlider } from '@components/ImageGallerySlider';
+// import { Menu } from '@components/Menu';
 import './styles.css';
-import foto1 from './img/foto1.jpg';
-import foto2 from './img/foto2.png';
-import foto3 from './img/foto3.jpg';
-// import foto4 from './img/foto4.jpg'
-// import foto5 from './img/foto5.jpg'
-import foto6 from './img/foto6.jpg';
+import { ImageSlider } from '@components/ImageSlider';
+import { introImages } from './img/Intro';
+// Alterar o tipo das imagens para WebP - mantém qualidade e diminui tamanho do arquivo, ideal já que temos muitas fotos
 
 export const Home = () => {
-    const images = [foto1, foto2, foto3, foto6]
     return (
         <div className='container-all'>
         {/* <Menu /> */}
-        <ImageGallerySlider images={images}/>
+        <ImageSlider images={introImages} autoplay/>
         
-        <h2>Ônibus luxo</h2>
-        <h2>Vans luxo</h2>
-        <h2>Carros luxo</h2>
-        <h2>Helicópteros luxo</h2>
-        <h2>Jatos super luxo</h2>
+        <section>
+            <h2>Quem somos</h2>
+        </section>
+
+        <section>
+            <h2>Opções</h2>
+            <div>
+                <h3>Ônibus executivos G7 - 2015/2016</h3>
+                {/* <ImageSlider /> */}
+                {/* Lista de onibus com links para mais detalhes */}
+            </div>
+            <div>
+                <h3>Vans luxo - 2015/2016</h3>
+            </div>
+            <div>
+                <h3>Carros luxo</h3>
+            </div>
+            <div>
+                <h3>Helicópteros luxo</h3>
+            </div>
+            <div>
+                <h3>Jatos super luxo</h3>
+            </div>
+        </section>
+
+        <section>
+            <h2>Diferença de poltrona de ônibus</h2>
+        </section>
+
+        <section>
+            <h2>Contato</h2>
+            <p>
+                Facebook
+            </p>
+        </section>
 
 
         </div>
